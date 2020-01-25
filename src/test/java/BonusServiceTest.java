@@ -1,0 +1,40 @@
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class BonusServiceTest {
+    @Test
+    void shouldReturn10IfAmountIs2000() {
+        BonusService service = new BonusService();
+        int amount = 2000;
+
+        int actual = service.calculateBonus(amount);
+        int expected = 10;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldReturnZeroIfAmountLowerThan1000() {
+        BonusService service = new BonusService();
+        int amount = 900;
+
+        int actual = service.calculateBonus(amount);
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+
+    void shouldReturn100IfAmountMoreThen11000(){
+        BonusService service = new BonusService();
+        int amount = 20000;
+        int expectedResult = 100;
+
+        int actualResult = service.calculateBonus(amount);
+
+        Assertions.assertEquals(expectedResult, actualResult);
+    }
+}
